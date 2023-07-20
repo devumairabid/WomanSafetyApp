@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon",
-    "start": "node index.js",
-    "build": "yarn"
+    "start": "node index.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
