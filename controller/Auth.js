@@ -40,22 +40,7 @@ exports.login = async(req,res)=>{
     
 }
 
-// exports.imageUpload=(req,res)=>{
-//     try {
-//         ImageInDb = new Product(req.body);
-//         ImageInDb.save();
-//         res.json(ImageInDb);
-//         res.sendStatus(200).json('success to upload image');
-//     } catch (error) {
-//         res.sendStatus(401).json('failure to upload image');
-//     }
-// }
 
-// exports.getOne = async (req, res) => {
-//     const id = req.params.id;
-//     const product = await Product.findById(id).exec()
-//     res.json(product)
-// }
 
 
 
@@ -98,7 +83,22 @@ exports.imageUpload = async (req, res) => {
 
 
 
+// exports.imageUpload=(req,res)=>{
+//     try {
+//         ImageInDb = new Product(req.body);
+//         ImageInDb.save();
+//         res.json(ImageInDb);
+//         res.sendStatus(200).json('success to upload image');
+//     } catch (error) {
+//         res.sendStatus(401).json('failure to upload image');
+//     }
+// }
 
+// exports.getOne = async (req, res) => {
+//     const id = req.params.id;
+//     const product = await Product.findById(id).exec()
+//     res.json(product)
+// }
 
 
 
