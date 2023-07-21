@@ -10,6 +10,7 @@ const authRouter = require('./router/Auth')
 const imageRouter = require('./router/Image')
 const discriptionRouter = require('./router/MessageSent')
 var cors = require('cors')
+const port = process.env.PORT || 3000;
 
 
 const io = new Server(httpServer);
@@ -34,8 +35,8 @@ async function main() {
     await mongoose.connect('mongodb+srv://umairabid927:Gpcsf-790838@cluster0.c1hdudn.mongodb.net/authentication');
     console.log('Database connected');
 }
-httpServer.listen(3000, (req, res) => {
-    console.log('Server Started');
+httpServer.listen(port, (req, res) => {
+    console.log(`Server listening on ${port}`);
 })
 
 
