@@ -9,7 +9,7 @@ const privateKey = fs.readFileSync(path.resolve(__dirname, '../private.key'), 'u
 
 
 exports.signUp =(req, res, ) =>{
-    console.log(req.body,'ggggggggggggggggggggggggggggggg');
+    console.log(req.body,'djdl');
     const product = new Product(req.body)
     var token = jwt.sign({ email :req.body.email}, privateKey, { algorithm: 'RS256' });
     const hash = bcrypt.hashSync(req.body.password, 10);
@@ -59,8 +59,7 @@ exports.imageUpload = async (req, res) => {
       console.log("newUser: " + newUser)
       
   
-     const hello= await newUser.save();
-     console.log(hello);
+
   
       res.status(200).json('Successfully uploaded image');
     } catch (error) {
@@ -83,6 +82,19 @@ exports.imageUpload = async (req, res) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+  
 // exports.imageUpload=(req,res)=>{
 //     try {
 //         ImageInDb = new Product(req.body);
@@ -98,24 +110,7 @@ exports.imageUpload = async (req, res) => {
 //     const id = req.params.id;
 //     const product = await Product.findById(id).exec()
 //     res.json(product)
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//
 // exports.signUp = (req, res) => {
 //     const product = new Product(req.body);
 //     var token = jwt.sign({ email: req.body.email }, privateKey, { algorithm: 'RS256' });
