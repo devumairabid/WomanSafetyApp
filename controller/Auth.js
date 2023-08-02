@@ -9,7 +9,7 @@ const privateKey = fs.readFileSync(path.resolve(__dirname, '../private.key'), 'u
 
 
 exports.signUp =(req, res, ) =>{
-    console.log(req.body,'djdl');
+    //console.log(req.body,'djdl');
     const product = new Product(req.body)
     var token = jwt.sign({ email :req.body.email}, privateKey, { algorithm: 'RS256' });
     const hash = bcrypt.hashSync(req.body.password, 10);
@@ -17,7 +17,7 @@ exports.signUp =(req, res, ) =>{
     product.token = token;
     product.save();
     res.json(product)
-    console.log(token);
+    //console.log(token);
 }
 
 exports.login = async(req,res)=>{
@@ -45,10 +45,10 @@ exports.login = async(req,res)=>{
 
 
 exports.imageUpload = async (req, res) => {
-    console.log("req.body", req.body)
+    //console.log("req.body", req.body)
     try {
       const { image } = req.body;
-        console.log("image: " + image)
+        //console.log("image: " + image)
   
       const newUser = new Product({
         fullName: req.body.fullName,
@@ -56,7 +56,7 @@ exports.imageUpload = async (req, res) => {
         password: req.body.password,
         image: image
       });
-      console.log("newUser: " + newUser)
+      //console.log("newUser: " + newUser)
       
   
 
