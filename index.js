@@ -4,7 +4,7 @@ const { Server } = require('socket.io');
 const app = express();
 const httpServer = createServer(app);
 const mongoose = require('mongoose');
-const productRouter = require('./router/Product')
+// const productRouter = require('./router/Product')
 
 const authRouter = require('./router/Auth')
 const imageRouter = require('./router/Image')
@@ -27,7 +27,7 @@ io.on('connection', (socket) => {
 app.use(cors())
 app.use(express.json());
 app.use('/auth', authRouter.router)
-app.use('/products', productRouter.router)
+// app.use('/products', productRouter.router)
 app.use('/', imageRouter.router);
 app.use('/message', discriptionRouter.router)
 main().catch(err => console.log(err));
