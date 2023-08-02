@@ -15,13 +15,13 @@ const port = process.env.PORT || 3000;
 
 const io = new Server(httpServer);
 io.on('connection', (socket) => {
-    //console.log('a user connected');
+    ('a user connected');
     socket.on('send_message', (msg) => {
         io.emit('receive_message', msg);
     })
 
     socket.on('disconnect', () => {
-        //console.log('user disconnected');
+        ('user disconnected');
     });
 });
 app.use(cors())
@@ -31,13 +31,13 @@ app.use('/auth', authRouter.router)
 app.use('/', imageRouter.router);
 app.use('/message', discriptionRouter.router)
 main().catch(err => console.log(err));
-    async function main() {
-        await mongoose.connect('mongodb+srv://umairabid927:Gpcsf-790838@cluster0.c1hdudn.mongodb.net/authentication');
-        //console.log('Database connected');
-    }
+async function main() {
+    await mongoose.connect('mongodb+srv://umairabid927:Gpcsf-790838@cluster0.c1hdudn.mongodb.net/authentication');
+    ('Database connected');
+}
 httpServer.listen(port, (req, res) => {
-        //console.log(`Server listening on ${port}`);
-    })
+    (`Server listening on ${port}`);
+})
 
 
 
@@ -69,9 +69,9 @@ httpServer.listen(port, (req, res) => {
 // const auth = ((req, res, next) => {
 //     try {
 //         const token = req.get('Authorization').split('Bearer ')[1];
-//         //console.log(token);
+//         (token);
 //         var decoded = jwt.verify(token, publicKey);
-//         //console.log(decoded);
+//         (decoded);
 //         if (decoded.email) {
 //             next();
 //         }
